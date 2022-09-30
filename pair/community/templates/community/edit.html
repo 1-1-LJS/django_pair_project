@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+<h1 class="text-center mt-5 mb-1">리뷰 수정하기</h1>
+<section class="p-5">
+  <form action="{% url 'community:update' review.pk %}">
+    <div class="mb-3">
+      <label class="form-label">제목</label>
+      <input
+        type="text"
+        class="form-control"
+        name="title"
+        value="{{ review.title }}"
+      />
+    </div>
+    <div class="mb-3">
+      <label class="form-label">내용</label>
+      <textarea type="text" class="form-control" name="content">
+{{ review.content }}</textarea
+      >
+    </div>
+    <div class="d-grid gap-2 mt-4">
+      <input class="btn btn-primary" type="submit" value="리뷰 수정하기" />
+    </div>
+  </form>
+</section>
+{% endblock %}
